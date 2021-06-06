@@ -4,8 +4,10 @@ import java.io.*;
 import java.util.HashMap;
 
 public class Main {
+    static HashMap<String , Boolean>  DICTIONARY ;
     public static void main(String[] args) {
-        HashMap<String , Boolean> dic = readDictionaryFromFile();
+        DICTIONARY= readDictionaryFromFile();
+        wordBreak("Ilovemango", "");
 
     }
     public static HashMap<String , Boolean> readDictionaryFromFile (){
@@ -33,4 +35,31 @@ public class Main {
         }
         return DICTIONARY;
     }
+
+    public static boolean isValid(String word){
+        word = word.toLowerCase();
+        if(DICTIONARY.get(word) == null) {
+            return false;
+        } else if(DICTIONARY.get(word)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void wordBreak(String str, String result) {
+        int size = str.length();
+        for (int i = 1; i <= size; i++) {
+            String prefix = str.substring(0, i);
+
+            if (isValid(prefix)) {
+                if (i == size) {
+                    result += prefix;
+                    System.out.println(result);
+                    return;
+                }
+                wordBreak(str.substring(i, size), result + prefix + " ");
+            }
+        }
+    }
+
 }

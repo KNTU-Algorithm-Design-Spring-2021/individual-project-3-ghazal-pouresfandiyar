@@ -1687,6 +1687,7 @@ hurry
 hurry_up
 hurt
 husband
+i
 I
 ice
 ice_cream
@@ -2045,6 +2046,7 @@ man
 manage
 management
 manager
+mango
 manner
 manufacture
 manufacturer
