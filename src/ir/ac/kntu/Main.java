@@ -4,18 +4,19 @@ import java.io.*;
 import java.util.HashMap;
 
 public class Main {
+
     static HashMap<String , Boolean>  DICTIONARY ;
+
     public static void main(String[] args) {
+
         DICTIONARY= readDictionaryFromFile();
-
-        wordBreak("ILOVEMANGO");
-        wordBreak("IAMBATMAN");
-        wordBreak("CALLSECURITYATMIAMIAIRPORTBECAUSEITHINKABOMBISABOUTTOGOOFF");
-        wordBreak("ABORTTHEPLANMEETATTHEDARKCABIN");
-        wordBreak("LADIESANDGENTLEMENPLEASEWEARYOURMASKSEVERYWHERE");
-        wordBreak("MYGRANDMOTHERALWAYSREMINDEDMETODRIVECAREFULLYANYTIMEIAMONMYWAYTOHOME");
-
-
+sentenceBreak("mango");
+//        sentenceBreak("ILOVEICECREAMANDMANGO");
+//        sentenceBreak("IAMBATMAN");
+//        sentenceBreak("CALLSECURITYATMIAMIAIRPORTBECAUSEITHINKABOMBISABOUTTOGOOFF");
+//        sentenceBreak("ABORTTHEPLANMEETATTHEDARKCABIN");
+//        sentenceBreak("LADIESANDGENTLEMENPLEASEWEARYOURMASKSEVERYWHERE");
+//        sentenceBreak("MYGRANDMOTHERALWAYSREMINDEDMETODRIVECAREFULLYANYTIMEIAMONMYWAYTOHOME");
 
     }
 
@@ -54,7 +55,7 @@ public class Main {
         return false;
     }
 
-    public static void wordBreakUtil(String str, String result) {
+    public static void tracingTree(String str, String result) {
         int size = str.length();
         for (int i = 1; i <= size; i++) {
             String prefix = str.substring(0, i);
@@ -65,14 +66,14 @@ public class Main {
                     System.out.println(result);
                     return;
                 }
-                wordBreakUtil(str.substring(i, size), result + prefix + " ");
+                tracingTree(str.substring(i, size), result + prefix + " ");
             }
         }
     }
 
-    public static void wordBreak(String str){
+    public static void sentenceBreak(String str){
         System.out.println("___________________________________");
-        wordBreakUtil(str.toLowerCase() , "");
+        tracingTree(str.toLowerCase() , "");
     }
 
 }
