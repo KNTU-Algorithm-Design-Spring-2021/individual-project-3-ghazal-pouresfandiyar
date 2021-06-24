@@ -10,13 +10,13 @@ public class Main {
     public static void main(String[] args) {
 
         DICTIONARY= readDictionaryFromFile();
-sentenceBreak("mango");
-//        sentenceBreak("ILOVEICECREAMANDMANGO");
-//        sentenceBreak("IAMBATMAN");
-//        sentenceBreak("CALLSECURITYATMIAMIAIRPORTBECAUSEITHINKABOMBISABOUTTOGOOFF");
-//        sentenceBreak("ABORTTHEPLANMEETATTHEDARKCABIN");
-//        sentenceBreak("LADIESANDGENTLEMENPLEASEWEARYOURMASKSEVERYWHERE");
-//        sentenceBreak("MYGRANDMOTHERALWAYSREMINDEDMETODRIVECAREFULLYANYTIMEIAMONMYWAYTOHOME");
+        sentenceBreak("mango");
+        sentenceBreak("ILOVEICECREAMANDMANGO");
+        sentenceBreak("IAMBATMAN");
+        sentenceBreak("CALLSECURITYATMIAMIAIRPORTBECAUSEITHINKABOMBISABOUTTOGOOFF");
+        sentenceBreak("ABORTTHEPLANMEETATTHEDARKCABIN");
+        sentenceBreak("LADIESANDGENTLEMENPLEASEWEARYOURMASKSEVERYWHERE");
+        sentenceBreak("MYGRANDMOTHERALWAYSREMINDEDMETODRIVECAREFULLYANYTIMEIAMONMYWAYTOHOME");
 
     }
 
@@ -72,7 +72,7 @@ sentenceBreak("mango");
     }
 
     public static void sentenceBreak(String str){
-        System.out.println("___________________________________");
+        System.out.println("__________________________________________________________________________________");
         tracingTree(str.toLowerCase() , "");
     }
 
